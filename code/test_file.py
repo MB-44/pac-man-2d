@@ -1,6 +1,9 @@
 import pygame
 import sys
 import math
+import os
+
+os.chdir("D:/pac-man-2d")
 
 # Initialize Pygame
 pygame.init()
@@ -17,6 +20,11 @@ pacman_x, pacman_y = WIDTH // 2, HEIGHT // 2
 pacman_speed = 5
 pacman_angle = 0
 pacman_direction = 0  # 0: Right, 1: Up, 2: Left, 3: Down
+
+# sound
+pygame.mixer.init()
+pygame.mixer.music.load('sounds/background_sound.mp3')
+pygame.mixer.music.play(-1,0,0)
 
 # Set up the game window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))

@@ -4,7 +4,7 @@ from os.path import join, isfile;
 from settings import *
 class Game:
     def __init__(self) -> None:
- 
+        
         # setup
         pygame.init()
         self.displaySurface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))  
