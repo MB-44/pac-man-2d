@@ -22,9 +22,9 @@ pacman_angle = 0
 pacman_direction = 0  # 0: Right, 1: Up, 2: Left, 3: Down
 
 # sound
-pygame.mixer.init()
-pygame.mixer.music.load('sounds/background_sound.mp3')
-pygame.mixer.music.play(-1,0,0)
+# pygame.mixer.init()
+# pygame.mixer.music.load('sounds/background_sound.mp3')
+# pygame.mixer.music.play(-1,0,0)
 
 # Set up the game window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -39,6 +39,16 @@ while True:
             sys.exit()
 
     keys = pygame.key.get_pressed()
+    
+    if keys[pygame.K_RIGHT]:
+        pacman_direction = 0
+    elif keys[pygame.K_UP]:
+        pacman_direction = 1
+    elif keys[pygame.K_LEFT]:
+        pacman_direction = 2
+    elif keys[pygame.K_DOWN]:
+        pacman_direction = 3
+    
     pacman_angle += pacman_direction * 90  # Change direction based on user input
 
     # Update Pac-Man's position

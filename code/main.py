@@ -1,6 +1,7 @@
 import pygame, sys, time, math;
 from os import listdir;
 from os.path import join, isfile;
+from levels.first_level import *
 from settings import *
 class Game:
     def __init__(self) -> None:
@@ -10,13 +11,9 @@ class Game:
         self.displaySurface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))  
         pygame.display.set_caption("Pac Man")
         self.clock = pygame.time.Clock()
-        self.active = True
+        # self.active = True
 
         # sprite groups
-        
-
-
-
 
     def run(self):
         lastTime = time.time()
@@ -31,15 +28,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit();
                     sys.exit()
-                if event.type == pygame.K_UP:
-                    pass
-                if event.type == pygame.K_DOWN:
-                    pass
-                if event.type == pygame.K_LEFT:
-                    pass
-                if event.type == pygame.K_RIGHT:
-                    pass
-
+            
 
 
 
