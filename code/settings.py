@@ -1,7 +1,7 @@
 # window
 WINDOW_HEIGHT = 600
 WINDOW_WIDTH = 600
-FRAME_RATE = 60
+FPS = 60
 
 # pac-man
 PACMAN_RADIUS = 30

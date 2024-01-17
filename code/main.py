@@ -1,8 +1,9 @@
-import pygame, sys, time, math;
+import pygame, sys, time, math,json
 from os import listdir;
 from os.path import join, isfile;
 from levels.first_level import *
 from settings import *
+
 class Game:
     def __init__(self) -> None:
         
@@ -18,6 +19,18 @@ class Game:
     def run(self):
         lastTime = time.time()
         
+        jsonFilePath = os.path.join('code','data','first_level.json')
+        
+        # print(os.getcwd())
+        
+        # read the json file
+        with open(jsonFilePath, 'r') as jsonFile:
+            levelData = json.load(jsonFile)
+
+        print(levelData)
+
+        first_level = First_Level(levelData)
+
         while True:
             #delta time
             dt = time.time() - lastTime;
@@ -29,10 +42,11 @@ class Game:
                     pygame.quit();
                     sys.exit()
             
-
-
-
-
+            # level = First_Level()
+            first_level.draw(self.displaySurface)
+            
+            pygame.display.flip()
+            self.clock.tick(FPS)
 
 
 if __name__ == "__main__":
